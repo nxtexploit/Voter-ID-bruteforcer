@@ -1,3 +1,3 @@
 # Voter-ID-bruteforcer
 Created this tool while testing an gov application
-![](https://i.postimg.cc/wB17QCF8/ezgif-com-gif-maker.gif)
+[![voter-co-Trim.gif](https://i.postimg.cc/SxVdX9Xs/voter-co-Trim.gif)](https://postimg.cc/nXjBgCGb)
