@@ -1,3 +1,4 @@
 requests
 time
 urllib3
+termcolor
