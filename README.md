@@ -7,6 +7,9 @@
 - ### Usage:
 
 ```bash
-git clone https://github.com/nxtexploit/Voter-ID-bruteforcer ; cd Voter-ID-bruteforcer ; pip install -r requirements.txt; python3 Voter-ID-bruteforcer.py
+git clone https://github.com/nxtexploit/Voter-ID-bruteforcer 
+cd Voter-ID-bruteforcer 
+pip install -r requirements.txt
+python3 Voter-ID-bruteforcer.py
 ```
 - ### Write-Up link : https://link.medium.com/x8Wt5nzUrrb 
